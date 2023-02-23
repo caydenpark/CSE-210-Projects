@@ -64,6 +64,7 @@ public class Program
         else if (command == "p")
         {
             _player1.Pass(_ball, _player2);
+            Console.WriteLine("\nCongratulations, you completed your first pass!");
         }
     }
 
@@ -97,6 +98,7 @@ public class Program
         else if (command == "p")
         {
             _player2.Pass(_ball, _player1);
+            Console.WriteLine("\nCongratulations, you completed your first pass!\n");
         }
     }
 
