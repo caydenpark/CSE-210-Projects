@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Numerics;
 
-// par20080@byui.edu
-
 public class Program
 {
     private static Ball _ball;
