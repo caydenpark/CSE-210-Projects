@@ -28,23 +28,28 @@ class Reflection : Activity
         int randomIndexP = randomP.Next(prompts.Count);
         string randomPrompt = prompts[randomIndexP];
 
-        Console.WriteLine("Consider the following propmt:");
-        Console.WriteLine($"--- {randomPrompt} ---");
+        Console.WriteLine("\nConsider the following propmt:");
+        Console.WriteLine($"\n--- {randomPrompt} ---");
+        Console.Write("\nPress enter to continue.");
+        Console.ReadLine();
+        Console.Clear();
 
         List<string> questions = new List<string>();
-        prompts.Add("Why was this experience meaningful to you?");
-        prompts.Add("Have you ever done anything like this before?");
-        prompts.Add("How did you get started?");
-        prompts.Add("How did you feel when it was complete?");
-        prompts.Add("What made this time different than other times when you were not as successful?");
-        prompts.Add("What is your favorite thing about this experience?");
-        prompts.Add("What could you learn from this experience that applies to other situations?");
-        prompts.Add("What did you learn about yourself through this experience?");
-        prompts.Add("How can you keep this experience in mind in the future?");
+        questions.Add("> Why was this experience meaningful to you?");
+        questions.Add("> Have you ever done anything like this before?");
+        questions.Add("> How did you get started?");
+        questions.Add("> How did you feel when it was complete?");
+        questions.Add("> What made this time different than other times when you were not as successful?");
+        questions.Add("> What is your favorite thing about this experience?");
+        questions.Add("> What could you learn from this experience that applies to other situations?");
+        questions.Add("> What did you learn about yourself through this experience?");
+        questions.Add("> How can you keep this experience in mind in the future?");
+        
+        string randomQuestion = "";
 
         Random randomQ = new Random();
         int randomIndexQ = randomQ.Next(questions.Count);
-        string randomQuestion = questions[randomIndexQ];
+        randomQuestion = questions[randomIndexQ];
 
         int durationInt;
         durationInt = int.Parse(duration);
@@ -54,9 +59,12 @@ class Reflection : Activity
 
         while (stopwatch.Elapsed.Seconds <= durationInt)
         {
-            Thread.Sleep(5000);
-            Console.Write(randomQuestion);
-            Pause();
+            for (int i = 0; i < questions.Count; i ++)
+            {
+                Thread.Sleep(2000);
+                Console.Write($"\n{randomQuestion}");
+                Pause();
+            }
         }
     }
 }

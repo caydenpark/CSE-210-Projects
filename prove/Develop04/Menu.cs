@@ -4,6 +4,7 @@ class Menu
 {
     public void DisplayMenu()
     {
+        Console.Clear();
         Console.WriteLine("Menu options:");
         Console.WriteLine("    1. Start Breathing Activity");
         Console.WriteLine("    2. Start Reflecting Activity");

@@ -27,8 +27,8 @@ class Listing : Activity
         int randomIndexP = randomP.Next(prompts.Count);
         string randomPrompt = prompts[randomIndexP];
 
-        Console.WriteLine("List as many responses as you can to the following prompt:");
-        Console.WriteLine($"--- {randomPrompt} ---");
+        Console.WriteLine("\nList as many responses as you can to the following prompt:");
+        Console.WriteLine($"\n--- {randomPrompt} ---");
 
         List<string> animationCountdown = new List<string>();
         animationCountdown.Add("4");
@@ -37,24 +37,20 @@ class Listing : Activity
         animationCountdown.Add("1");
         animationCountdown.Add("0");
 
-        int i = 0;
         int durationInt;
         durationInt = int.Parse(duration);
 
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
         
-        Console.Write("You may begin in: ");
+        Console.Write("\nYou may begin in: \n");
 
-        while (stopwatch.Elapsed.Seconds <= durationInt)
+        for (int i = 0; i < animationCountdown.Count; i ++)
         {
             string countDown = animationCountdown[i];
-
             Console.Write(countDown);
             Thread.Sleep(1500);
             Console.Write("\b \b");
-            
-            i++;
         }
 
         string line;
@@ -62,10 +58,13 @@ class Listing : Activity
 
         while (stopwatch.Elapsed.Seconds <= durationInt)
         {
+            Console.Write("> ");
             line = Console.ReadLine();
+            //Console.WriteLine("");
             lineCount++;
         }
 
         Console.WriteLine($"You have listed {lineCount} items!");
+        Thread.Sleep(8000);
     }
 }

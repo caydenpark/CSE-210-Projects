@@ -18,7 +18,6 @@ class Program
             activity.Duration();
             activity.Pause();
             activity.ActualActivities();
-
             activity.EndMessage();
             
         }

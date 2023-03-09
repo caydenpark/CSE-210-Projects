@@ -25,7 +25,6 @@ class Breather : Activity
         animationCountdown.Add("1");
         animationCountdown.Add("0");
 
-        int i = 0;
         int durationInt;
         durationInt = int.Parse(duration);
 
@@ -34,16 +33,24 @@ class Breather : Activity
 
         while (stopwatch.Elapsed.Seconds <= durationInt)
         {
-            string countDown = animationCountdown[i];
-
-            Console.WriteLine("Breathe in...");
-            Console.Write(countDown);
-            Thread.Sleep(1500);
-            Console.WriteLine("\b \b");
-            Console.WriteLine("Breathe out...");
+            Console.Clear();
+            Console.Write("Breathe in...");
             
-            i++;
-            
+            for (int i = 0; i < animationCountdown.Count; i ++)
+            {
+                string countDown = animationCountdown[i];
+                Console.Write(countDown);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+            }
+            Console.Write("\nBreathe out...");
+            for (int i = 0; i < animationCountdown.Count; i ++)
+            {
+                string countDown = animationCountdown[i];
+                Console.Write(countDown);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+            }
         }
     }
 }

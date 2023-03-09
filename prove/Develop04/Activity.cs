@@ -16,12 +16,14 @@ public class Activity
     }
     public void StartMessage()
     {
-        Console.WriteLine($"\nWelcome to the {activityName} activity.\n");
+        Console.Clear();
+        Console.WriteLine($"Welcome to the {activityName} activity.\n");
     }
     public void Duration()
     {
         Console.Write("How long, in seconds, would you like for your session? ");
         duration = Console.ReadLine();
+        Console.Clear();
         Console.WriteLine("Get ready...");
     }
     public void Pause()
@@ -64,6 +66,7 @@ public class Activity
     }
     public void EndMessage()
     {
+        Console.Clear();
         Console.WriteLine("Well done!\n");
         Console.WriteLine($"You have completed another {duration} seconds of the {activityName} activity.");
     }
