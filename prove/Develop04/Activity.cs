@@ -67,7 +67,7 @@ public class Activity
     public void EndMessage()
     {
         Console.Clear();
-        Console.WriteLine("Well done!\n");
+        Console.WriteLine("\nWell done!\n");
         Console.WriteLine($"You have completed another {duration} seconds of the {activityName} activity.");
     }
 }

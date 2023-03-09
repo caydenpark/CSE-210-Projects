@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Diagnostics;
+using System.Linq;
 
 class Reflection : Activity
 {
@@ -59,11 +60,13 @@ class Reflection : Activity
 
         while (stopwatch.Elapsed.Seconds <= durationInt)
         {
-            for (int i = 0; i < questions.Count; i ++)
+            foreach (var question in questions.ToList())
             {
+                //questionIndex = questions[0];
                 Thread.Sleep(2000);
-                Console.Write($"\n{randomQuestion}");
+                Console.Write($"\n{question}");
                 Pause();
+                questions.Remove(question);
             }
         }
     }

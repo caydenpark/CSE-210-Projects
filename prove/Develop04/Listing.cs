@@ -60,7 +60,6 @@ class Listing : Activity
         {
             Console.Write("> ");
             line = Console.ReadLine();
-            //Console.WriteLine("");
             lineCount++;
         }
 

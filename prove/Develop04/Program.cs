@@ -19,7 +19,6 @@ class Program
             activity.Pause();
             activity.ActualActivities();
             activity.EndMessage();
-            
         }
     }
 }
