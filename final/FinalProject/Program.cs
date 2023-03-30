@@ -4,6 +4,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello FinalProject World!");
+        string gameNumber = " ";
+        while (gameNumber != "4")
+        {
+            Menu menu = new Menu();
+            menu.DisplayMenu();
+            gameNumber = Console.ReadLine();
+            GameFactory factory = new GameFactory();
+            Game game = factory.CreateGame(gameNumber);
+
+        }
     }
 }
