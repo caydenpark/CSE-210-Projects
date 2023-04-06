@@ -41,7 +41,7 @@ public class Wordle:Game
             
             foreach (char letter in guess.ToUpper())
             {
-                if(randomWordFromList.ToUpper().Contains(letter))
+                if (randomWordFromList.ToUpper().Contains(letter))
                 {
                     Console.WriteLine($"The letter {letter} does exist in this word!");
                 }

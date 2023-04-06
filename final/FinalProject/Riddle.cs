@@ -39,6 +39,7 @@ public class Riddle:Game
             Console.Clear();
             Console.Write(randomRiddle);
             guess = Console.ReadLine();
+            
             if (guess.ToUpper() == randomWordFromList.ToUpper())
             {
                 Console.WriteLine("\nNice, you got it!");

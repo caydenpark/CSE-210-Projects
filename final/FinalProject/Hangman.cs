@@ -136,13 +136,16 @@ class Hangman:Game
         while (wrongGuesses != 6 && lettersGuessedRight != lengthOfRandomWord)
         {
             Console.Write("\nLetters guessed so far: ");
-            foreach(char letter in lettersGuessed)
+
+            foreach (char letter in lettersGuessed)
             {
                 Console.Write(letter + " ");
             }
+
             Console.Write("\nGuess a letter: ");
             char letterGuessed = Console.ReadLine()[0];
-            if(lettersGuessed.Contains(letterGuessed))
+
+            if (lettersGuessed.Contains(letterGuessed))
             {
                 Console.WriteLine("\nYou have already guess this letter.");
                 DrawHangman(wrongGuesses);
@@ -152,6 +155,7 @@ class Hangman:Game
             else
             {
                 bool right = false;
+
                 for (int i = 0; i < randomWordFromList.Length; i++)
                 {
                     if (letterGuessed == randomWordFromList[i])
@@ -159,7 +163,7 @@ class Hangman:Game
                         right = true;
                     }
                 }
-                if(right)
+                if (right)
                 {
                     DrawHangman(wrongGuesses);
                     lettersGuessed.Add(letterGuessed);
