@@ -11,7 +11,7 @@ public class GameFactory
             else if(gameNumber == "2")
                 game = new Wordle();
             else if(gameNumber == "3")
-                game = new SpellingBee();
+                game = new Riddle();
             return game;
         }
 }
