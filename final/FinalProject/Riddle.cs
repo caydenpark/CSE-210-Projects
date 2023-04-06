@@ -3,8 +3,8 @@ using System;
 public class Riddle:Game
 {
     public Riddle():base("Riddle"){}
-    public string randomRiddle;
-
+    private string randomRiddle;
+    
     public override void InitializeGame()
     {
         Dictionary<string, string> riddlesDictionary = new Dictionary<string, string>();
